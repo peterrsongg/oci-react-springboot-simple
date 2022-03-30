@@ -8,6 +8,16 @@ if ! (return 0 2>/dev/null); then
   exit
 fi
 
+# POSIX compliant find and replace
+function sed_i(){
+  local OP="$1"
+  local FILE="$2"
+  sed -e "$OP" "$FILE" >"/tmp/$FILE"
+  mv -- "/tmp/$FILE" "$FILE"
+}
+export -f sed_i
+
+
 #set mtdrworkshop_location
 export MTDRWORKSHOP_LOCATION="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 cd $MTDRWORKSHOP_LOCATION

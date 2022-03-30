@@ -7,35 +7,26 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties(prefix = "spec.template.spec.containers.env.name")
 public class K8DbSettings {
-    private String database_name;
-    private String database_url;
+    private String db_user;
+    private String db_url;
     private String driver_class_name;
     private String dbpassword;
 
 
-    public String getDbpassword() {
-        return dbpassword;
+    public String getDb_user() {
+        return db_user;
     }
 
-    public void setDbpassword(String dbpassword) {
-        this.dbpassword = dbpassword;
+    public void setDb_user(String db_user) {
+        this.db_user = db_user;
     }
 
-
-    public String getDatabase_name() {
-        return database_name;
+    public String getDb_url() {
+        return db_url;
     }
 
-    public void setDatabase_name(String database_name) {
-        this.database_name = database_name;
-    }
-
-    public String getDatabase_url() {
-        return database_url;
-    }
-
-    public void setDatabase_url(String database_url) {
-        this.database_url = database_url;
+    public void setDb_url(String db_url) {
+        this.db_url = db_url;
     }
 
     public String getDriver_class_name() {
@@ -46,7 +37,13 @@ public class K8DbSettings {
         this.driver_class_name = driver_class_name;
     }
 
+    public String getDbpassword() {
+        return dbpassword;
+    }
 
+    public void setDbpassword(String dbpassword) {
+        this.dbpassword = dbpassword;
+    }
 
 
 
