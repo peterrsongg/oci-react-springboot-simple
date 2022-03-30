@@ -28,12 +28,12 @@ spec:
     spec:
       containers:
         - name: todolistapp-springboot
-          image: "%DOCKER_REGISTRY%/%IMAGE_NAME%:%IMAGE_VERSION%"
+          image: ${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}
           imagePullPolicy: Always
           env:
-            - name: database.username
+            - name: db_user
               value: "TODOUSER"
-            - name: database.url
+            - name: db_url
               value: "jdbc:oracle:thin:@%TODO_PDB_NAME%_tp?TNS_ADMIN=/mtdrworkshop/creds"
             - name: todo.table.name
               value: "todoitem"
