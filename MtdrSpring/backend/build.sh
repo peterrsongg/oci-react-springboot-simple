@@ -18,9 +18,9 @@ fi
 export IMAGE=${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}
 
 mvn package
-docker build -t $IMAGE .
+docker build -t=$IMAGE .
 
-docker push $IMAGE
+docker push "$IMAGE"
 if [  $? -eq 0 ]; then
-    docker rmi $IMAGE
+    docker rmi "$IMAGE"
 fi
