@@ -17,10 +17,10 @@ fi
 
 export IMAGE=${DOCKER_REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}
 
-mvn package
-docker build -t=$IMAGE .
+mvn clean package spring-boot:repackage
+docker build -f Dockerfile -t $IMAGE .
 
-docker push "$IMAGE"
+docker push $IMAGE
 if [  $? -eq 0 ]; then
     docker rmi "$IMAGE"
 fi

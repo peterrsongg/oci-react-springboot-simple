@@ -3,6 +3,5 @@ COPY pom.xml /tmp/
 COPY src /tmp/src/
 WORKDIR /tmp/
 EXPOSE 8080
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+COPY target/MyTodoList-0.0.1-SNAPSHOT.jar MyTodoList.jar
+ENTRYPOINT ["java","-jar","MyTodoList.jar"]
