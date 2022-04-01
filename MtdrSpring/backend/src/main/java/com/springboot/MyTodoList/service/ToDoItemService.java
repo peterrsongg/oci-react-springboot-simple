@@ -27,7 +27,9 @@ public class ToDoItemService {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-    public ToDoItem addToDoItem(ToDoItem toDoItem){return toDoItemRepository.save(toDoItem);}
+    public ToDoItem addToDoItem(ToDoItem toDoItem){
+        return toDoItemRepository.save(toDoItem);
+    }
 
     public boolean deleteToDoItem(int id){
         try{

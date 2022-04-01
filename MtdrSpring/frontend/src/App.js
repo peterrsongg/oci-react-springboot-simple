@@ -150,6 +150,7 @@ function App() {
       console.log("addItem("+text+")")
       setInserting(true);
       var data = {};
+      console.log(data);
       data.description = text;
       fetch(API_LIST, {
         method: 'POST',
@@ -160,9 +161,9 @@ function App() {
         body: JSON.stringify(data)
       }).then((response) => {
         // This API doens't return a JSON document
-        // console.log(response);
-        // console.log();
-        // console.log(response.headers.location);
+        console.log(response);
+        console.log();
+        console.log(response.headers.location);
         // return response.json();
         if (response.ok) {
           return response;
