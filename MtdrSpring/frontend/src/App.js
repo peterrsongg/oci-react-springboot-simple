@@ -158,7 +158,7 @@ function App() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       }).then((response) => {
         // This API doens't return a JSON document
         console.log(response);
