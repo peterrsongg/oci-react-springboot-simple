@@ -10,7 +10,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.List;
 
 @SpringBootApplication
-@EnableSwagger2
 public class MyTodoListApplication {
 
 	public static void main(String[] args) {

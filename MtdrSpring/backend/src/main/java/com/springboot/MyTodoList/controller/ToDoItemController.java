@@ -15,7 +15,7 @@ import java.util.List;
 public class ToDoItemController {
     @Autowired
     private ToDoItemService toDoItemService;
-    @CrossOrigin
+    //@CrossOrigin
     @GetMapping(value = "/todolist")
     public List<ToDoItem> getAllToDoItems(){
         return toDoItemService.findAll();
@@ -30,7 +30,7 @@ public class ToDoItemController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-    @CrossOrigin
+    //@CrossOrigin
     @PostMapping(value = "/todolist")
     public ResponseEntity addToDoItem(@RequestBody ToDoItem todoItem) throws Exception{
         ToDoItem td = toDoItemService.addToDoItem(todoItem);
@@ -41,7 +41,7 @@ public class ToDoItemController {
         return ResponseEntity.ok()
                 .headers(responseHeaders).build();
     }
-    @CrossOrigin
+    //@CrossOrigin
     @PutMapping(value = "todolist/{id}")
     public ResponseEntity<ToDoItem> updateToDoItem(@RequestBody ToDoItem toDoItem, @PathVariable int id){
         try{
@@ -52,7 +52,7 @@ public class ToDoItemController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
-    @CrossOrigin
+    //@CrossOrigin
     @DeleteMapping(value = "todolist/{id}")
     public ResponseEntity<Boolean> deleteToDoItem(@PathVariable("id") int id){
         Boolean flag = false;
