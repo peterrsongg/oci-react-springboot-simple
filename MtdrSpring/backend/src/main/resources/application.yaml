@@ -1,6 +1,3 @@
-oracle:
-  jdbc:
-    fanEnabled:false
 spring:
   datasource:
     driver_class_name: oracle.jdbc.OracleDriver

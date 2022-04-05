@@ -20,7 +20,7 @@ public class ToDoItemController {
     public List<ToDoItem> getAllToDoItems(){
         return toDoItemService.findAll();
     }
-    @CrossOrigin
+    //@CrossOrigin
     @GetMapping(value = "/todolist/{id}")
     public ResponseEntity<ToDoItem> getToDoItemById(@PathVariable int id){
         try{
@@ -38,12 +38,13 @@ public class ToDoItemController {
         responseHeaders.set("location",""+td.getID());
         responseHeaders.set("Access-Control-Expose-Headers","location");
         //URI location = URI.create(""+td.getID())
+
         return ResponseEntity.ok()
                 .headers(responseHeaders).build();
     }
     //@CrossOrigin
     @PutMapping(value = "todolist/{id}")
-    public ResponseEntity<ToDoItem> updateToDoItem(@RequestBody ToDoItem toDoItem, @PathVariable int id){
+    public ResponseEntity updateToDoItem(@RequestBody ToDoItem toDoItem, @PathVariable int id){
         try{
             ToDoItem toDoItem1 = toDoItemService.updateToDoItem(id, toDoItem);
             System.out.println(toDoItem1.toString());
