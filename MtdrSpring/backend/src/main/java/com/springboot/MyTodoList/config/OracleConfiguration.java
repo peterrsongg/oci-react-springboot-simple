@@ -12,7 +12,14 @@ import org.springframework.core.env.Environment;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
-
+///*
+//    This class grabs the appropriate values for OracleDataSource,
+//    The method that uses env, grabs it from the environment variables set
+//    in the docker container. The method that uses dbSettings is for local testing
+//    @author: peter.song@oracle.com
+// */
+//
+//
 @Configuration
 public class OracleConfiguration {
     Logger logger = LoggerFactory.getLogger(DbSettings.class);
@@ -31,7 +38,7 @@ public class OracleConfiguration {
         logger.info("Using Username " + env.getProperty("db_user"));
         ds.setPassword(env.getProperty("dbpassword"));
         logger.info("Using Password: " + env.getProperty("dbpassword"));
-
+//        // For local testing
 //        ds.setDriverType(dbSettings.getDriver_class_name());
 //        logger.info("Using Driver " + dbSettings.getDriver_class_name());
 //        ds.setURL(dbSettings.getUrl());
@@ -42,5 +49,4 @@ public class OracleConfiguration {
 //        logger.info("Using Password: " + dbSettings.getPassword());
         return ds;
     }
-
 }
