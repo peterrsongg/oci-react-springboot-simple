@@ -16,7 +16,7 @@ if [ -z "$OCI_REGION" ]; then
     echo "Error: OCI_REGION env variable needs to be set!"
     exit 1
 fi
-echo "Creating springboot deplyomen and service"
+echo "Creating springboot deplyoment and service"
 export CURRENTTIME=$( date '+%F_%H:%M:%S' )
 echo CURRENTTIME is $CURRENTTIME  ...this will be appended to generated deployment yaml
 cp src/main/resources/todolistapp-springboot.yaml todolistapp-springboot-$CURRENTTIME.yaml
